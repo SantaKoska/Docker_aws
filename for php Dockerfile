@@ -1,0 +1,10 @@
+FROM php:7.4-apache
+
+# Install mysqli extension
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+
+# Copy custom configuration if needed (optional)
+# COPY config/php.ini /usr/local/etc/php/
+
+# Enable Apache mod_rewrite (optional, if needed)
+RUN a2enmod rewrite
